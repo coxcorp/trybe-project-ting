@@ -1,3 +1,4 @@
+import sys
 from .file_management import txt_importer
 
 
@@ -21,4 +22,7 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        print(f"{instance.search(position)}")
+    except IndexError:
+        sys.stderr.write("Posição inválida")
